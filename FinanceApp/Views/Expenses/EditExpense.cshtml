@@ -1,0 +1,23 @@
+﻿@model FinanceApp.Models.Expense
+
+<div class="container">
+    <h2>Edit Expense</h2>
+    <form asp-action="EditExpense" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <div>
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Amount" class="form-label"></label>
+            <input asp-for="Amount" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Category" class="form-label"></label>
+            <input asp-for="Category" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Update Expense</button>
+        <a asp-action="ExpensesList" class="btn btn-secondary mt-4">Cancel</a>
+    </form>
+</div>
